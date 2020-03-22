@@ -1,11 +1,12 @@
 import React from 'react'
-import AppNavigator from './navigation/AppNavigator'
 
 import { StyleSheet, Text, View } from 'react-native'
 
-export default function App() {
+const PostDetailScreen = props => {
   return (
-    <AppNavigator />
+    <View style={styles.screen}>
+      <Text>Post Detail</Text>
+    </View>
   )
 }
 
@@ -16,3 +17,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   }
 })
+
+export default PostDetailScreen
