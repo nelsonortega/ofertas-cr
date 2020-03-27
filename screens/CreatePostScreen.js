@@ -1,5 +1,4 @@
 import React from 'react'
-import HeaderImage from '../components/HeaderImage'
 
 import { Ionicons } from '@expo/vector-icons'
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'

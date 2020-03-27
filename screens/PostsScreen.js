@@ -1,10 +1,9 @@
 import React from 'react'
 import Post from '../components/Post'
-import HeaderImage from '../components/HeaderImage'
 
 import { Ionicons } from '@expo/vector-icons'
 import { DUMMYPOSTS } from '../data/dummy-data'
-import { StyleSheet, FlatList, TouchableOpacity } from 'react-native'
+import { FlatList, TouchableOpacity } from 'react-native'
 
 const PostsScreen = props => {
   const renderGridItem = postItem => {
@@ -19,8 +18,6 @@ const PostsScreen = props => {
     />
   )
 }
-
-const styles = StyleSheet.create({})
 
 PostsScreen.navigationOptions = navData => {
   return {
