@@ -20,12 +20,4 @@ const styles = StyleSheet.create({
   }
 })
 
-PostDetailScreen.navigationOptions = {
-  headerTitle: () => <HeaderImage />,
-  headerStyle: {
-    backgroundColor: Platform.OS === 'android' ? 'grey' : ''
-  },
-  headerTintColor: Platform.OS === 'android' ? 'white' : 'grey'
-}
-
 export default PostDetailScreen

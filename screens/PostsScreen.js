@@ -1,9 +1,10 @@
 import React from 'react'
+import Post from '../components/Post'
 import HeaderImage from '../components/HeaderImage'
 
+import { Ionicons } from '@expo/vector-icons'
 import { DUMMYPOSTS } from '../data/dummy-data'
-import { StyleSheet, FlatList, View, Platform } from 'react-native'
-import Post from '../components/Post'
+import { StyleSheet, FlatList, TouchableOpacity } from 'react-native'
 
 const PostsScreen = props => {
   const renderGridItem = postItem => {
@@ -12,7 +13,7 @@ const PostsScreen = props => {
 
   return (
     <FlatList
-      keyExtractor={(item, index) => item.id}
+      keyExtractor={item => item.id}
       data={DUMMYPOSTS}
       renderItem={renderGridItem}
     />
@@ -21,14 +22,14 @@ const PostsScreen = props => {
 
 const styles = StyleSheet.create({})
 
-PostsScreen.navigationOptions = {
-  headerTitle: () => <HeaderImage />,
-  headerRight: () => <View></View>,
-  headerLeft: () => <View></View>,
-  headerStyle: {
-    backgroundColor: Platform.OS === 'android' ? 'grey' : ''
-  },
-  headerTintColor: Platform.OS === 'android' ? 'white' : 'grey'
+PostsScreen.navigationOptions = navData => {
+  return {
+    headerLeft: () => (
+      <TouchableOpacity style={{marginLeft: 15}} onPress={() => { navData.navigation.toggleDrawer() }}>
+        <Ionicons name={'md-menu'} size={30} color="white" />
+      </TouchableOpacity>
+    )
+  }
 }
 
 export default PostsScreen

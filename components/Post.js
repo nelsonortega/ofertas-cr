@@ -3,15 +3,17 @@ import React from 'react'
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
 
 const Post = props => {
+  const openPostDetail = () => {
+    props.navigation.navigate({
+      routeName: 'PostDetail',
+      params: { postId: props.postItem.item.id }
+    })
+  }
+
   return (
     <TouchableOpacity
       style={styles.postContainer}
-      onPress={() => {
-        props.navigation.navigate({
-          routeName: 'PostDetail',
-          params: { postId: props.postItem.item.id }
-        });
-      }}
+      onPress={openPostDetail}
     >
       <View>
         <Text>{props.postItem.item.title}</Text>
