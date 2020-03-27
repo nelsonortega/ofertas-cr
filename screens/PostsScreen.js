@@ -1,9 +1,9 @@
 import React from 'react'
 import Post from '../components/Post'
+import HeaderIcon from '../components/HeaderIcon'
 
-import { Ionicons } from '@expo/vector-icons'
+import { FlatList } from 'react-native'
 import { DUMMYPOSTS } from '../data/dummy-data'
-import { FlatList, TouchableOpacity } from 'react-native'
 
 const PostsScreen = props => {
   const renderGridItem = postItem => {
@@ -21,11 +21,7 @@ const PostsScreen = props => {
 
 PostsScreen.navigationOptions = navData => {
   return {
-    headerLeft: () => (
-      <TouchableOpacity style={{marginLeft: 15}} onPress={() => { navData.navigation.toggleDrawer() }}>
-        <Ionicons name={'md-menu'} size={30} color="white" />
-      </TouchableOpacity>
-    )
+    headerLeft: () => <HeaderIcon navData={navData} iconName={'md-menu'}/>
   }
 }
 

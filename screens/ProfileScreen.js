@@ -1,7 +1,7 @@
 import React from 'react'
+import HeaderIcon from '../components/HeaderIcon'
 
-import { Ionicons } from '@expo/vector-icons'
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
+import { StyleSheet, Text, View } from 'react-native'
 
 const ProfileScrenn = props => {
   return (
@@ -22,11 +22,7 @@ const styles = StyleSheet.create({
 
 ProfileScrenn.navigationOptions = navData => {
   return {
-    headerLeft: () => (
-      <TouchableOpacity style={{marginLeft: 15}} onPress={() => { navData.navigation.toggleDrawer() }}>
-        <Ionicons name={'md-menu'} size={30} color="white" />
-      </TouchableOpacity>
-    )
+    headerLeft: () => <HeaderIcon navData={navData} iconName={'md-menu'}/>
   }
 }
 
