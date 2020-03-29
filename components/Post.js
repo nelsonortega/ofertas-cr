@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native'
+import { StyleSheet, Text, View, TouchableNativeFeedback, Image } from 'react-native'
 
 const Post = props => {
   const openPostDetail = () => {
@@ -11,23 +11,22 @@ const Post = props => {
   }
 
   return (
-    <TouchableOpacity onPress={openPostDetail} >
+    <TouchableNativeFeedback onPress={openPostDetail} >
       <View style={styles.postContainer}>
         <Image 
           style={styles.imageStyle}
-          source={{
-            uri: props.postItem.item.image,
-          }}
+          source={{uri: props.postItem.item.image}}
         />
+        <View style={styles.lineSeparator} />
         <View>
           <Text style={styles.title}>{props.postItem.item.title}</Text>
           <Text style={styles.description}>{props.postItem.item.description}</Text>
         </View>
         <View>
-          <Text style={styles.price}>{props.postItem.item.price}</Text>
+          <Text style={styles.price}>₡{props.postItem.item.price}</Text>
         </View>
       </View>
-    </TouchableOpacity>
+    </TouchableNativeFeedback>
   )
 }
 
@@ -40,27 +39,34 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     backgroundColor: 'white'
   },
+  lineSeparator: {
+    borderBottomColor: 'grey',
+    borderBottomWidth: 0.2,
+    opacity: 0.5
+  },
   imageStyle: {
-    marginBottom: 10,
     borderTopRightRadius: 20,
     borderTopLeftRadius: 20,
     width: '100%',
     height: '60%'
   },
   title: {
+    marginTop: 10,
     marginHorizontal: 15,
-    fontSize: 20
+    fontSize: 20,
+    fontWeight: 'bold'
   },
   description: {
     marginHorizontal: 15,
-    fontSize: 13,
+    fontSize: 14,
     color: 'grey'
   },
   price: {
     marginRight: 30,
     marginTop: 15,
     fontSize: 13,
-    textAlign: 'right'
+    textAlign: 'right',
+    fontWeight: 'bold'
   }
 })
 
