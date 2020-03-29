@@ -10,10 +10,10 @@ export const DUMMYPOSTS = [
 ]
 
 export const DUMMYCATEGORIES = [
-  new Category('1', 'Productos'),
-  new Category('2', 'Eventos'),
-  new Category('3', 'Profesionales'),
-  new Category('4', 'Turismo'),
-  new Category('5', 'Municipalidades'),
-  new Category('6', 'Bienes Raíces')
+  new Category('1', 'Productos', 'md-cart'),
+  new Category('2', 'Eventos', 'md-moon'),
+  new Category('3', 'Profesionales', 'md-ribbon'),
+  new Category('4', 'Turismo', 'md-airplane'),
+  new Category('5', 'Municipalidades', 'md-card'),
+  new Category('6', 'Bienes Raíces', 'md-home')
 ]
