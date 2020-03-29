@@ -1,5 +1,4 @@
 import React from 'react'
-import HeaderImage from '../components/HeaderImage'
 
 import { StyleSheet, Text, View } from 'react-native'
 

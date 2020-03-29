@@ -11,17 +11,21 @@ const Post = props => {
   }
 
   return (
-    <TouchableOpacity
-      style={styles.postContainer}
-      onPress={openPostDetail}
-    >
-      <Image 
-        style={styles.imageStyle}
-        source={require('../assets/imgs/food.jpeg')}
-      />
-      <View>
-        <Text style={styles.title}>{props.postItem.item.title}</Text>
-        <Text style={styles.description}>{props.postItem.item.description}</Text>
+    <TouchableOpacity onPress={openPostDetail} >
+      <View style={styles.postContainer}>
+        <Image 
+          style={styles.imageStyle}
+          source={{
+            uri: props.postItem.item.image,
+          }}
+        />
+        <View>
+          <Text style={styles.title}>{props.postItem.item.title}</Text>
+          <Text style={styles.description}>{props.postItem.item.description}</Text>
+        </View>
+        <View>
+          <Text style={styles.price}>{props.postItem.item.price}</Text>
+        </View>
       </View>
     </TouchableOpacity>
   )
@@ -30,25 +34,33 @@ const Post = props => {
 const styles = StyleSheet.create({
   postContainer: {
     flex: 1,
-    margin: 15,
-    height: 300,
-    elevation: 10,
+    margin: 25,
+    height: 320,
+    elevation: 20,
     borderRadius: 20,
     backgroundColor: 'white'
   },
   imageStyle: {
-    margin: 10,
-    borderRadius: 20,
-    width: 360,
-    height: 150
+    marginBottom: 10,
+    borderTopRightRadius: 20,
+    borderTopLeftRadius: 20,
+    width: '100%',
+    height: '60%'
   },
   title: {
-    marginLeft: 15,
+    marginHorizontal: 15,
     fontSize: 20
   },
   description: {
-    marginLeft: 15,
-    fontSize: 13
+    marginHorizontal: 15,
+    fontSize: 13,
+    color: 'grey'
+  },
+  price: {
+    marginRight: 30,
+    marginTop: 15,
+    fontSize: 13,
+    textAlign: 'right'
   }
 })
 
