@@ -21,7 +21,7 @@ const Post = props => {
         <View style={styles.lineSeparator} />
         <View>
           <CustomText bold style={styles.title}>{props.postItem.item.title}</CustomText>
-          <CustomText style={styles.description}>{props.postItem.item.description}</CustomText>
+          <CustomText numberOfLines={2} style={styles.description}>{props.postItem.item.description}</CustomText>
         </View>
         <View>
           <CustomText style={styles.price}>₡{props.postItem.item.price}</CustomText>
@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
   postContainer: {
     flex: 1,
     margin: 20,
-    height: 350,
+    height: 280,
     elevation: 20,
     borderRadius: 20,
     backgroundColor: 'white'
@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
   },
   price: {
     marginRight: 30,
-    marginTop: 10,
+    marginTop: 15,
     fontSize: 13,
     textAlign: 'right',
     fontWeight: 'bold'

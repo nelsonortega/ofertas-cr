@@ -8,7 +8,7 @@ const CustomText = props => {
     {...styles.customFontBold, ...props.style }
 
   return (
-    <Text style={fontStyle}>
+    <Text {...props} style={fontStyle}>
       {props.children}
     </Text>
   )
