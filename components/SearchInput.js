@@ -28,9 +28,9 @@ const styles = StyleSheet.create({
     borderRadius: 7
   },
   textInput: {
+    fontSize: 15,
+    fontFamily: 'open-sans-bold',
     flex: 1,
-    fontWeight: '700',
-    backgroundColor: 'white',
     marginLeft: 15
   },
   icon: {

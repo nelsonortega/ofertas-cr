@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { DrawerNavigatorItems } from 'react-navigation-drawer'
-import { StyleSheet, View, ImageBackground, Text, ScrollView, Image } from 'react-native'
+import { StyleSheet, View, ImageBackground, ScrollView } from 'react-native'
 
 const SideMenu = props => {
   return (

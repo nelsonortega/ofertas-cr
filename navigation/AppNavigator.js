@@ -28,6 +28,10 @@ const sideMenuElementStyle = {
     marginTop: 16,
     marginHorizontal: 8
   },
+  labelStyle: {
+    fontWeight: 'normal',
+    fontFamily: 'open-sans-bold'
+  },
   itemStyle: {
     borderRadius: 7
   }

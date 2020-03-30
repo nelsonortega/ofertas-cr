@@ -1,6 +1,7 @@
 import React from 'react'
+import CustomText from '../components/CustomText'
 
-import { StyleSheet, Text, View, TouchableNativeFeedback, Image } from 'react-native'
+import { StyleSheet, View, TouchableNativeFeedback, Image } from 'react-native'
 
 const Post = props => {
   const openPostDetail = () => {
@@ -19,11 +20,11 @@ const Post = props => {
         />
         <View style={styles.lineSeparator} />
         <View>
-          <Text style={styles.title}>{props.postItem.item.title}</Text>
-          <Text style={styles.description}>{props.postItem.item.description}</Text>
+          <CustomText bold style={styles.title}>{props.postItem.item.title}</CustomText>
+          <CustomText style={styles.description}>{props.postItem.item.description}</CustomText>
         </View>
         <View>
-          <Text style={styles.price}>₡{props.postItem.item.price}</Text>
+          <CustomText style={styles.price}>₡{props.postItem.item.price}</CustomText>
         </View>
       </View>
     </TouchableNativeFeedback>
@@ -33,8 +34,8 @@ const Post = props => {
 const styles = StyleSheet.create({
   postContainer: {
     flex: 1,
-    margin: 25,
-    height: 320,
+    margin: 20,
+    height: 350,
     elevation: 20,
     borderRadius: 20,
     backgroundColor: 'white'
@@ -53,8 +54,7 @@ const styles = StyleSheet.create({
   title: {
     marginTop: 10,
     marginHorizontal: 15,
-    fontSize: 20,
-    fontWeight: 'bold'
+    fontSize: 20
   },
   description: {
     marginHorizontal: 15,
@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
   },
   price: {
     marginRight: 30,
-    marginTop: 15,
+    marginTop: 10,
     fontSize: 13,
     textAlign: 'right',
     fontWeight: 'bold'

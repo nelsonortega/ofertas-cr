@@ -1,8 +1,9 @@
 import React from 'react'
+import CustomText from '../components/CustomText'
 
 import { Ionicons } from '@expo/vector-icons'
 import { DUMMYCATEGORIES } from '../data/dummy-data'
-import { StyleSheet, View, Text, FlatList, TouchableOpacity} from 'react-native'
+import { StyleSheet, View, FlatList, TouchableOpacity} from 'react-native'
 
 const HorizontalCategories = props => {
   const renderCategory = categoryItem => {
@@ -10,7 +11,7 @@ const HorizontalCategories = props => {
       <TouchableOpacity>
         <View style={styles.categoryContainer}>
           <Ionicons size={35} color='grey' name={categoryItem.item.icon} />
-          <Text style={styles.categoryText}>{categoryItem.item.name}</Text>
+          <CustomText style={styles.categoryText}>{categoryItem.item.name}</CustomText>
         </View>
       </TouchableOpacity>
     )
@@ -46,8 +47,7 @@ const styles = StyleSheet.create({
   },
   categoryText: {
     //color: 'white',
-    color: 'grey',
-    fontWeight: 'bold'
+    color: 'grey'
   }
 })
 
