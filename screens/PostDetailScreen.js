@@ -3,9 +3,11 @@ import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 
 const PostDetailScreen = props => {
+  const postId = props.navigation.getParam('postId')
+
   return (
     <View style={styles.screen}>
-      <Text>Post Detail</Text>
+      <Text>Post Detail {postId}</Text>
     </View>
   )
 }

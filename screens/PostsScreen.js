@@ -34,7 +34,8 @@ PostsScreen.navigationOptions = navData => {
 
 const styles = StyleSheet.create({
   screen: {
-    backgroundColor: 'white'
+    backgroundColor: 'white',
+    marginBottom: 20
   }
 })
 

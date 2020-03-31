@@ -35,7 +35,6 @@ const styles = StyleSheet.create({
     marginLeft: 20
   },
   categoryContainer: {
-    //backgroundColor: '#c0c0c0',
     borderColor: 'grey',
     borderWidth: 1,
     height: 80,
@@ -46,7 +45,6 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   categoryText: {
-    //color: 'white',
     color: 'grey'
   }
 })
