@@ -4,6 +4,7 @@ import AppNavigator from './navigation/AppNavigator'
 
 import { useState } from 'react'
 import { AppLoading } from 'expo'
+import { MenuProvider } from 'react-native-popup-menu'
 
 export default function App() {
   const [fontLoaded, setFontLoaded] = useState(false)
@@ -25,5 +26,9 @@ export default function App() {
     )
   }
 
-  return <AppNavigator />
+  return (
+    <MenuProvider>
+      <AppNavigator />
+    </MenuProvider>
+  )
 }

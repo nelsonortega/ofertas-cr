@@ -28,14 +28,13 @@ const PostsScreen = props => {
 
 PostsScreen.navigationOptions = navData => {
   return {
-    headerLeft: () => <HeaderIcon navData={navData} iconName={'md-menu'}/>
+    headerLeft: () => <HeaderIcon navData={navData} iconName={'ios-menu'}/>
   }
 }
 
 const styles = StyleSheet.create({
   screen: {
-    backgroundColor: 'white',
-    marginBottom: 20
+    backgroundColor: 'white'
   }
 })
 

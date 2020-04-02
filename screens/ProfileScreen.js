@@ -11,6 +11,12 @@ const ProfileScrenn = props => {
   )
 }
 
+ProfileScrenn.navigationOptions = navData => {
+  return {
+    headerLeft: () => <HeaderIcon navData={navData} iconName={'md-menu'}/>
+  }
+}
+
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
@@ -19,11 +25,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   }
 })
-
-ProfileScrenn.navigationOptions = navData => {
-  return {
-    headerLeft: () => <HeaderIcon navData={navData} iconName={'md-menu'}/>
-  }
-}
 
 export default ProfileScrenn
