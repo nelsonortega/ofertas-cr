@@ -1,7 +1,13 @@
 import { firebaseAuth } from '../firebase'
 import { User, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from 'firebase/auth'
 
-export async function loginUser (email: string, password: string) {
+interface AuthResponse {
+  success: boolean
+  errorMessage: string
+  userResponse: Object
+}
+
+export async function loginUser (email: string, password: string): Promise<AuthResponse> {
   const loginResponse = {
     success: false,
     errorMessage: '',
@@ -14,15 +20,15 @@ export async function loginUser (email: string, password: string) {
 
     return loginResponse
   } catch (error) {
-    error instanceof Error 
+    error instanceof Error
       ? loginResponse.errorMessage = error.message
       : loginResponse.errorMessage = 'Unknown error'
-    
+
     return loginResponse
   }
 }
 
-export async function registerUser (email: string, password: string) {
+export async function registerUser (email: string, password: string): Promise<AuthResponse> {
   const registerResponse = {
     success: false,
     errorMessage: '',
@@ -35,7 +41,7 @@ export async function registerUser (email: string, password: string) {
 
     return registerResponse
   } catch (error) {
-    error instanceof Error 
+    error instanceof Error
       ? registerResponse.errorMessage = error.message
       : registerResponse.errorMessage = 'Unknown error'
 
@@ -43,7 +49,7 @@ export async function registerUser (email: string, password: string) {
   }
 }
 
-export async function logoutUser () {
+export async function logoutUser (): Promise<unknown> {
   try {
     await signOut(firebaseAuth)
   } catch (error) {
@@ -51,6 +57,6 @@ export async function logoutUser () {
   }
 }
 
-export async function isUserAdmin (user: User) {
+export function isUserAdmin (user: User): boolean {
   return user.uid === undefined
 }

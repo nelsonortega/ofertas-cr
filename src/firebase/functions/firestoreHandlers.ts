@@ -5,7 +5,17 @@ interface DocumentsResponse {
   documents: DocumentData[]
 }
 
-export async function createDocument (collection: CollectionReference, newDocument: Object) {
+interface CreateDocumentResponse {
+  success: boolean
+  documentId: string
+}
+
+interface UpdateDocumentResponse {
+  success: boolean
+  document: DocumentData
+}
+
+export async function createDocument (collection: CollectionReference, newDocument: Object): Promise<CreateDocumentResponse> {
   const createResponse = {
     success: true,
     documentId: ''
@@ -31,7 +41,7 @@ export async function createDocument (collection: CollectionReference, newDocume
   }
 }
 
-export async function updateDocument (collection: CollectionReference, documentId: string, newDocument: DocumentData) {
+export async function updateDocument (collection: CollectionReference, documentId: string, newDocument: DocumentData): Promise<UpdateDocumentResponse> {
   const updateResponse = {
     success: true,
     document: {}
@@ -61,7 +71,7 @@ export async function updateDocument (collection: CollectionReference, documentI
   }
 }
 
-export async function getAllDocuments (collection: CollectionReference) {
+export async function getAllDocuments (collection: CollectionReference): Promise<DocumentsResponse> {
   const documentsResponse: DocumentsResponse = {
     success: true,
     documents: []
