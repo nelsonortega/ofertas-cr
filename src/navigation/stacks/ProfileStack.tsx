@@ -3,14 +3,14 @@ import { ProfileScreen } from '../../screens'
 import AuthStackWrapper from './AuthStackWrapper'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 
-const Profile = createNativeStackNavigator()
+const Stack = createNativeStackNavigator()
 
 const ProfileStack = (): ReactElement => {
   return (
     <AuthStackWrapper>
-      <Profile.Navigator>
-        <Profile.Screen name='Profile' component={ProfileScreen} />
-      </Profile.Navigator>
+      <Stack.Navigator>
+        <Stack.Screen name='Profile' component={ProfileScreen} />
+      </Stack.Navigator>
     </AuthStackWrapper>
   )
 }
