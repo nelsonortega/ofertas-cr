@@ -1,5 +1,5 @@
 import { ReactElement } from 'react'
-import { HomeScreen, ProfileScreen } from '../screens'
+import { HomeStack, ProfileStack } from './stacks'
 import { NavigationContainer } from '@react-navigation/native'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs'
@@ -11,8 +11,8 @@ const RootNavigator = (): ReactElement => {
     <NavigationContainer>
       <Tab.Navigator>
         <Tab.Screen
-          name='Home'
-          component={HomeScreen}
+          name='HomeTab'
+          component={HomeStack}
           options={{
             tabBarIcon: ({ color }) => (
               <MaterialCommunityIcons name='home' color={color} size={23} />
@@ -20,8 +20,8 @@ const RootNavigator = (): ReactElement => {
           }}
         />
         <Tab.Screen
-          name='Profile'
-          component={ProfileScreen}
+          name='ProfileTab'
+          component={ProfileStack}
           options={{
             tabBarIcon: ({ color }) => (
               <MaterialCommunityIcons name='account' color={color} size={23} />
