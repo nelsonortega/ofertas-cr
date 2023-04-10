@@ -1,5 +1,5 @@
 import { ReactElement } from 'react'
-import { HomeScreen, SettingsScreen } from '../screens'
+import { HomeScreen, ProfileScreen } from '../screens'
 import { NavigationContainer } from '@react-navigation/native'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs'
@@ -20,11 +20,11 @@ const RootNavigator = (): ReactElement => {
           }}
         />
         <Tab.Screen
-          name='Settings'
-          component={SettingsScreen}
+          name='Profile'
+          component={ProfileScreen}
           options={{
             tabBarIcon: ({ color }) => (
-              <MaterialCommunityIcons name='cog-outline' color={color} size={23} />
+              <MaterialCommunityIcons name='account' color={color} size={23} />
             )
           }}
         />
