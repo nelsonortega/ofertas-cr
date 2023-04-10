@@ -1,10 +1,10 @@
 import { ReactElement } from 'react'
 import { View, StyleSheet, Text } from 'react-native'
 
-const LoginScreen = (): ReactElement => {
+const RegisterScreen = (): ReactElement => {
   return (
     <View style={styles.container}>
-      <Text>Login screen</Text>
+      <Text>Register screen</Text>
     </View>
   )
 }
@@ -18,4 +18,4 @@ const styles = StyleSheet.create({
   }
 })
 
-export default LoginScreen
+export default RegisterScreen
