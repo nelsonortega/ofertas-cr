@@ -1,5 +1,6 @@
 import { ReactElement } from 'react'
-import { View, StyleSheet, Text } from 'react-native'
+import { Text } from 'react-native-paper'
+import { View, StyleSheet } from 'react-native'
 
 const HomeScreen = (): ReactElement => {
   return (

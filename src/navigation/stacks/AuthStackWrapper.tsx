@@ -9,14 +9,14 @@ interface AuthStackWrapperProps {
 }
 
 const AuthStackWrapper = (props: AuthStackWrapperProps): ReactElement => {
-  const user = true
+  const user = false
 
   if (user) {
     return props.children
   }
 
   return (
-    <Stack.Navigator>
+    <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen name='Login' component={LoginScreen} />
       <Stack.Screen name='Register' component={RegisterScreen} />
     </Stack.Navigator>
