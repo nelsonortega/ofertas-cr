@@ -7,7 +7,7 @@ const LoginScreen = (): ReactElement => {
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.container}>
         <View style={styles.formContainer}>
-          <Text variant='headlineLarge'>Bienvenido!</Text>
+          <Text variant='headlineLarge'>Inicia Sesion</Text>
           <TextInput
             label='Email'
           />
