@@ -1,20 +1,25 @@
 import { ReactElement } from 'react'
-import { Button, TextInput, Text, IconButton } from 'react-native-paper'
+import { Button, TextInput, Text, IconButton, Checkbox, useTheme } from 'react-native-paper'
 import { Platform, SafeAreaView, StatusBar, StyleSheet, View } from 'react-native'
 
 const LoginScreen = (): ReactElement => {
+  const theme = useTheme()
+
   return (
-    <SafeAreaView style={styles.safeArea}>
+    <SafeAreaView style={{ ...styles.safeArea, backgroundColor: theme.colors.background }}>
       <View style={styles.container}>
         <View style={styles.formContainer}>
           <Text variant='headlineLarge'>Inicia Sesion</Text>
-          <TextInput
-            label='Email'
-          />
-          <TextInput
-            label='Password'
-          />
-          <View style={{ alignItems: 'flex-end' }}>
+          <TextInput label='Email' />
+          <TextInput label='Password' />
+          <View style={styles.optionsContainer}>
+            <View style={styles.rememberMe}>
+              <Checkbox
+                status='checked'
+                onPress={() => { }}
+              />
+              <Text variant='bodyMedium'>Recordarme</Text>
+            </View>
             <Button mode='text' onPress={() => {}}>
               Olvide mi contraseña
             </Button>
@@ -42,7 +47,6 @@ const LoginScreen = (): ReactElement => {
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
-    backgroundColor: 'lightgray',
     paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0
   },
   container: {
@@ -53,6 +57,14 @@ const styles = StyleSheet.create({
   },
   formContainer: {
     gap: 20
+  },
+  optionsContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between'
+  },
+  rememberMe: {
+    flexDirection: 'row',
+    alignItems: 'center'
   },
   socialButtonsContainer: {
     alignItems: 'center'

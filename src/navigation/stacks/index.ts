@@ -1,2 +1,5 @@
 export { default as HomeStack } from './HomeStack'
 export { default as ProfileStack } from './ProfileStack'
+export { default as LocationStack } from './LocationStack'
+export { default as CreatePostStack } from './CreatePostStack'
+export { default as InformationStack } from './InformationStack'
